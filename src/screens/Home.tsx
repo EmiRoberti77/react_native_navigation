@@ -14,6 +14,10 @@ const Home: FC<HomeProps> = ({ navigation }) => {
         title="Home"
         onPress={() => navigation.navigate('Details', { title: 'Emi code' })}
       />
+            <Button
+        title="Settings"
+        onPress={() => navigation.navigate('Settings')}
+      />
     </View>
   );
 };
