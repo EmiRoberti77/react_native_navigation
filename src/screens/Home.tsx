@@ -17,10 +17,10 @@ const Home: FC<HomeProps> = ({ navigation }) => {
   })
 
   const interateToDos = () => {
-    return todos.map((t:Todo)=>(
-          <TouchableOpacity onPress={()=>navigation.navigate('Details', {todo:t})}>
-            <View style={styles.item}>
-              <Text style={styles.todoFont}>{t.title}</Text>
+    return todos.map((t:Todo, i:number)=>(
+          <TouchableOpacity key={i} onPress={()=>navigation.navigate('Details', {todo:t})}>
+            <View key={i} style={styles.item}>
+              <Text key={i} style={styles.todoFont}>{t.title}</Text>
             </View>
         </TouchableOpacity>)
       )
