@@ -1,11 +1,14 @@
-import { createStackNavigator } from '@react-navigation/stack';
-import { SafeAreaView, View } from 'react-native';
+
 import RootNavigator from './src/navigation/RootNavigator';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+const client = new QueryClient();
 
 export default function App() {
   return (
     <>
-      <RootNavigator />
+      <QueryClientProvider client={client}>
+        <RootNavigator />
+      </QueryClientProvider>    
     </>
   );
 }

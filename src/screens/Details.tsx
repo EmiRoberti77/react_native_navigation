@@ -13,10 +13,13 @@ interface DetailsProps {
 
 const Details: FC<DetailsProps> = ({ navigation }) => {
   const route = useRoute<DetailsScreenRouteProp>();
+  const {title, completed, userId, id} = route.params.todo;
   return (
     <View style={styles.container}>
-      <Text>Details</Text>
-      <Text>{route.params?.title}</Text>
+      <Text>{userId}</Text>
+      <Text>{id}</Text>
+      <Text>{title}</Text>
+      <Text>{completed ? 'Completed' : 'Not Completed'}</Text>
     </View>
   );
 };

@@ -1,8 +1,9 @@
 import { RouteProp } from "@react-navigation/native";
+import { Todo } from "../models/models";
 
 export type MainStackParamList = {
   Home: undefined;
-  Details: { title?: string };
+  Details: { todo: Todo };
   Settings: undefined;
 };
 
